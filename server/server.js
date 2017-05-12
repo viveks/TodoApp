@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var {mongoose} = require ('./db/db');
-var {Todo} = require ('./db/Todo');
+var {Todo} = require ('./models/Todo');
 
 var app = express();
 
@@ -16,11 +16,15 @@ app.post('/todos',(req,res)=> {
   todo.save().then((doc)=>{
     res.send(doc);
   }, (e)=>{
-    console.log(e);
+    //console.log(e);
     res.status(400).send(e);
   });
+
+  //next();
 });
 
 app.listen(3000,() => {
   console.log('started on port 3000');
 });
+
+module.exports = {app};
