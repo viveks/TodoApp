@@ -8,7 +8,8 @@ const testTodos = [{
 },
 {
   text: 'test todo 2'
-}]
+}];
+
 beforeEach((done) => {
   Todo.remove({}).then(()=>{
     return Todo.insertMany(testTodos);
