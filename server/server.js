@@ -48,7 +48,7 @@ app.get('/todos/:id',(req,res)=>{
 });
 
 app.listen(port,() => {
-  console.log(App started on ${port});
+  console.log(`App started on ${port}`);
 });
 
 module.exports = {app};
